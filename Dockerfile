@@ -18,7 +18,7 @@ COPY . .
 # Generate the ML models using the container's exact Python version
 ENV PYTHONPATH=/app
 RUN python scripts/generate_mock_data.py
-RUN python model/feature_engineering.py
+RUN python scripts/feature_engineering.py
 RUN python model/train_model.py
 
 # Expose port (Render uses $PORT, HuggingFace uses 7860, Koyeb uses 8000)
