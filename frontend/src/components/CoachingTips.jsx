@@ -29,7 +29,7 @@ export default function CoachingTips({ tips = [] }) {
         AI Coaching Action Items
       </h3>
 
-      <div className="space-y-3">
+      <div className="flex flex-col gap-5">
         {tips.map((tip, i) => {
           const impact = extractImpact(tip);
 
