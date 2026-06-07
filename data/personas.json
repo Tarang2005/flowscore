@@ -1,0 +1,131 @@
+[
+  {
+    "borrower_id": "priya_001",
+    "name": "Priya Sharma",
+    "age": 28,
+    "income_data": {
+      "platforms": [
+        {
+          "platform": "swiggy_partner",
+          "monthly_earnings_last_6m": [35000, 38000, 42000, 45000, 48000, 52000],
+          "platform_rating": 4.8,
+          "platform_account_age_months": 24
+        }
+      ],
+      "total_monthly_income_current": 52000,
+      "avg_monthly_income_6m": 43333
+    },
+    "spending_data": {
+      "avg_monthly_spending": 28000,
+      "spending_categories": {
+        "food": 8000,
+        "transport": 6000,
+        "utilities": 4000,
+        "personal": 10000
+      },
+      "late_payments_count_6m": 0,
+      "missed_payments_count_6m": 0
+    },
+    "credit_profile": {
+      "existing_loans": 0,
+      "total_debt": 0,
+      "credit_inquiries_6m": 1
+    },
+    "calculated_features": {
+      "income_volatility": 0.18,
+      "income_trend": 0.48,
+      "spending_to_income_ratio": 0.54,
+      "platform_count": 1,
+      "days_active_primary": 720,
+      "income_velocity_3m": 0.32
+    }
+  },
+  {
+    "borrower_id": "arjun_001",
+    "name": "Arjun Mehta",
+    "age": 32,
+    "income_data": {
+      "platforms": [
+        {
+          "platform": "upwork",
+          "monthly_earnings_last_6m": [120000, 135000, 145000, 155000, 165000, 180000],
+          "platform_rating": 4.95,
+          "platform_account_age_months": 36
+        },
+        {
+          "platform": "toptal",
+          "monthly_earnings_last_6m": [25000, 28000, 32000, 35000, 38000, 42000],
+          "platform_rating": 4.9,
+          "platform_account_age_months": 18
+        }
+      ],
+      "total_monthly_income_current": 222000,
+      "avg_monthly_income_6m": 160000
+    },
+    "spending_data": {
+      "avg_monthly_spending": 75000,
+      "spending_categories": {
+        "food": 15000,
+        "transport": 12000,
+        "utilities": 8000,
+        "personal": 40000
+      },
+      "late_payments_count_6m": 0,
+      "missed_payments_count_6m": 0
+    },
+    "credit_profile": {
+      "existing_loans": 0,
+      "total_debt": 0,
+      "credit_inquiries_6m": 0
+    },
+    "calculated_features": {
+      "income_volatility": 0.12,
+      "income_trend": 0.48,
+      "spending_to_income_ratio": 0.34,
+      "platform_count": 2,
+      "days_active_primary": 1080,
+      "income_velocity_3m": 0.28
+    }
+  },
+  {
+    "borrower_id": "meera_001",
+    "name": "Meera Patel",
+    "age": 26,
+    "income_data": {
+      "platforms": [
+        {
+          "platform": "fiverr",
+          "monthly_earnings_last_6m": [18000, 15000, 22000, 25000, 28000, 35000],
+          "platform_rating": 4.7,
+          "platform_account_age_months": 12
+        }
+      ],
+      "total_monthly_income_current": 35000,
+      "avg_monthly_income_6m": 23833
+    },
+    "spending_data": {
+      "avg_monthly_spending": 22000,
+      "spending_categories": {
+        "food": 7000,
+        "transport": 4000,
+        "utilities": 3000,
+        "personal": 8000
+      },
+      "late_payments_count_6m": 1,
+      "missed_payments_count_6m": 0
+    },
+    "credit_profile": {
+      "existing_loans": 1,
+      "total_debt": 15000,
+      "credit_inquiries_6m": 2
+    },
+    "calculated_features": {
+      "income_volatility": 0.35,
+      "income_trend": 0.48,
+      "spending_to_income_ratio": 0.92,
+      "platform_count": 1,
+      "days_active_primary": 360,
+      "income_velocity_3m": 0.40
+    }
+  }
+]

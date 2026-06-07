@@ -1,0 +1,120 @@
+{
+  "method": "gain",
+  "features": [
+    {
+      "rank": 1,
+      "name": "platform_account_variance",
+      "importance": 0.05119
+    },
+    {
+      "rank": 2,
+      "name": "days_on_secondary_platform",
+      "importance": 0.049309
+    },
+    {
+      "rank": 3,
+      "name": "account_age_months",
+      "importance": 0.048217
+    },
+    {
+      "rank": 4,
+      "name": "secondary_platform_earnings_pct",
+      "importance": 0.047819
+    },
+    {
+      "rank": 5,
+      "name": "missed_payments_count_6m",
+      "importance": 0.047814
+    },
+    {
+      "rank": 6,
+      "name": "spending_trend",
+      "importance": 0.047562
+    },
+    {
+      "rank": 7,
+      "name": "account_tenure_months",
+      "importance": 0.046686
+    },
+    {
+      "rank": 8,
+      "name": "platform_count",
+      "importance": 0.045545
+    },
+    {
+      "rank": 9,
+      "name": "income_std_dev",
+      "importance": 0.044841
+    },
+    {
+      "rank": 10,
+      "name": "existing_loan_count",
+      "importance": 0.044177
+    },
+    {
+      "rank": 11,
+      "name": "income_trend_6m",
+      "importance": 0.043638
+    },
+    {
+      "rank": 12,
+      "name": "income_velocity_3m",
+      "importance": 0.043337
+    },
+    {
+      "rank": 13,
+      "name": "avg_monthly_spending",
+      "importance": 0.043026
+    },
+    {
+      "rank": 14,
+      "name": "latest_month_income",
+      "importance": 0.042967
+    },
+    {
+      "rank": 15,
+      "name": "age",
+      "importance": 0.042502
+    },
+    {
+      "rank": 16,
+      "name": "avg_platform_rating",
+      "importance": 0.042389
+    },
+    {
+      "rank": 17,
+      "name": "primary_platform_earnings_pct",
+      "importance": 0.041516
+    },
+    {
+      "rank": 18,
+      "name": "late_payments_count_6m",
+      "importance": 0.04151
+    },
+    {
+      "rank": 19,
+      "name": "days_on_primary_platform",
+      "importance": 0.041273
+    },
+    {
+      "rank": 20,
+      "name": "spending_volatility",
+      "importance": 0.040154
+    },
+    {
+      "rank": 21,
+      "name": "avg_6m_income",
+      "importance": 0.039783
+    },
+    {
+      "rank": 22,
+      "name": "total_platforms",
+      "importance": 0.034776
+    },
+    {
+      "rank": 23,
+      "name": "spending_to_income_ratio",
+      "importance": 0.029968
+    }
+  ]
+}

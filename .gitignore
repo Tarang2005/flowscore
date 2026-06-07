@@ -1,0 +1,14 @@
+venv/
+node_modules/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+data/raw/
+data/processed/
+logs/
+.pytest_cache/
+coverage/
+dist/
+build/
+
