@@ -39,7 +39,7 @@ function ErrorState({ message }) {
       <h3 className="text-lg font-semibold text-surface-200 mb-2">Failed to Load</h3>
       <p className="text-sm text-surface-400 max-w-md mx-auto">{message}</p>
       <p className="text-xs text-surface-500 mt-4">
-        Make sure the backend is running at <code className="text-primary-400">localhost:8000</code>
+        Make sure the backend is running at <code className="text-primary-400">{import.meta.env.VITE_API_URL || 'localhost:8000'}</code>
       </p>
     </div>
   );

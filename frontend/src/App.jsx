@@ -183,7 +183,7 @@ export default function App() {
               <span>FastAPI + React</span>
               <span>•</span>
               <a
-                href="http://localhost:8000/docs"
+                href={`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/docs`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-400 hover:text-primary-300 transition-colors"
