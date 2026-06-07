@@ -3,118 +3,118 @@
   "features": [
     {
       "rank": 1,
-      "name": "income_trend_6m",
-      "importance": 0.155536
+      "name": "existing_loan_count",
+      "importance": 0.406789
     },
     {
       "rank": 2,
-      "name": "income_velocity_3m",
-      "importance": 0.136999
+      "name": "days_on_primary_platform",
+      "importance": 0.337031
     },
     {
       "rank": 3,
-      "name": "avg_platform_rating",
-      "importance": 0.072728
+      "name": "late_payments_count_6m",
+      "importance": 0.252861
     },
     {
       "rank": 4,
-      "name": "spending_trend",
-      "importance": 0.057016
+      "name": "account_tenure_months",
+      "importance": 0.003319
     },
     {
       "rank": 5,
-      "name": "days_on_primary_platform",
-      "importance": 0.048601
+      "name": "avg_6m_income",
+      "importance": 0.0
     },
     {
       "rank": 6,
-      "name": "age",
-      "importance": 0.047872
+      "name": "income_std_dev",
+      "importance": 0.0
     },
     {
       "rank": 7,
-      "name": "missed_payments_count_6m",
-      "importance": 0.047255
+      "name": "income_trend_6m",
+      "importance": 0.0
     },
     {
       "rank": 8,
-      "name": "late_payments_count_6m",
-      "importance": 0.039239
+      "name": "latest_month_income",
+      "importance": 0.0
     },
     {
       "rank": 9,
-      "name": "existing_loan_count",
-      "importance": 0.038091
+      "name": "income_velocity_3m",
+      "importance": 0.0
     },
     {
       "rank": 10,
-      "name": "avg_monthly_spending",
-      "importance": 0.031584
+      "name": "platform_count",
+      "importance": 0.0
     },
     {
       "rank": 11,
-      "name": "account_tenure_months",
-      "importance": 0.031186
+      "name": "primary_platform_earnings_pct",
+      "importance": 0.0
     },
     {
       "rank": 12,
-      "name": "latest_month_income",
-      "importance": 0.029352
+      "name": "secondary_platform_earnings_pct",
+      "importance": 0.0
     },
     {
       "rank": 13,
-      "name": "account_age_months",
-      "importance": 0.026877
+      "name": "avg_platform_rating",
+      "importance": 0.0
     },
     {
       "rank": 14,
-      "name": "avg_6m_income",
-      "importance": 0.02658
+      "name": "days_on_secondary_platform",
+      "importance": 0.0
     },
     {
       "rank": 15,
-      "name": "spending_volatility",
-      "importance": 0.026491
+      "name": "platform_account_variance",
+      "importance": 0.0
     },
     {
       "rank": 16,
-      "name": "days_on_secondary_platform",
-      "importance": 0.026291
+      "name": "account_age_months",
+      "importance": 0.0
     },
     {
       "rank": 17,
-      "name": "secondary_platform_earnings_pct",
-      "importance": 0.026179
+      "name": "total_platforms",
+      "importance": 0.0
     },
     {
       "rank": 18,
-      "name": "platform_account_variance",
-      "importance": 0.025025
+      "name": "spending_to_income_ratio",
+      "importance": 0.0
     },
     {
       "rank": 19,
-      "name": "income_std_dev",
-      "importance": 0.024726
+      "name": "avg_monthly_spending",
+      "importance": 0.0
     },
     {
       "rank": 20,
-      "name": "primary_platform_earnings_pct",
-      "importance": 0.024661
+      "name": "spending_volatility",
+      "importance": 0.0
     },
     {
       "rank": 21,
-      "name": "spending_to_income_ratio",
-      "importance": 0.021099
+      "name": "spending_trend",
+      "importance": 0.0
     },
     {
       "rank": 22,
-      "name": "platform_count",
-      "importance": 0.018635
+      "name": "missed_payments_count_6m",
+      "importance": 0.0
     },
     {
       "rank": 23,
-      "name": "total_platforms",
-      "importance": 0.017977
+      "name": "age",
+      "importance": 0.0
     }
   ]
 }

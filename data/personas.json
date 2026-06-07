@@ -7,13 +7,13 @@
       "platforms": [
         {
           "platform": "swiggy_partner",
-          "monthly_earnings_last_6m": [35000, 38000, 42000, 45000, 48000, 52000],
-          "platform_rating": 4.8,
+          "monthly_earnings_last_6m": [35000, 38000, 42000, 40000, 38000, 42000],
+          "platform_rating": 4.1,
           "platform_account_age_months": 24
         }
       ],
-      "total_monthly_income_current": 52000,
-      "avg_monthly_income_6m": 43333
+      "total_monthly_income_current": 42000,
+      "avg_monthly_income_6m": 39166
     },
     "spending_data": {
       "avg_monthly_spending": 28000,
@@ -23,7 +23,7 @@
         "utilities": 4000,
         "personal": 10000
       },
-      "late_payments_count_6m": 0,
+      "late_payments_count_6m": 1,
       "missed_payments_count_6m": 0
     },
     "credit_profile": {
@@ -33,11 +33,11 @@
     },
     "calculated_features": {
       "income_volatility": 0.18,
-      "income_trend": 0.48,
-      "spending_to_income_ratio": 0.54,
+      "income_trend": 0.05,
+      "spending_to_income_ratio": 0.71,
       "platform_count": 1,
       "days_active_primary": 720,
-      "income_velocity_3m": 0.32
+      "income_velocity_3m": 0.05
     }
   },
   {
@@ -95,13 +95,13 @@
       "platforms": [
         {
           "platform": "fiverr",
-          "monthly_earnings_last_6m": [18000, 15000, 22000, 25000, 28000, 35000],
-          "platform_rating": 4.7,
+          "monthly_earnings_last_6m": [35000, 32000, 28000, 25000, 20000, 18000],
+          "platform_rating": 2.8,
           "platform_account_age_months": 12
         }
       ],
-      "total_monthly_income_current": 35000,
-      "avg_monthly_income_6m": 23833
+      "total_monthly_income_current": 18000,
+      "avg_monthly_income_6m": 26333
     },
     "spending_data": {
       "avg_monthly_spending": 22000,
@@ -111,8 +111,8 @@
         "utilities": 3000,
         "personal": 8000
       },
-      "late_payments_count_6m": 1,
-      "missed_payments_count_6m": 0
+      "late_payments_count_6m": 3,
+      "missed_payments_count_6m": 1
     },
     "credit_profile": {
       "existing_loans": 1,
@@ -121,11 +121,11 @@
     },
     "calculated_features": {
       "income_volatility": 0.35,
-      "income_trend": 0.48,
-      "spending_to_income_ratio": 0.92,
+      "income_trend": -0.48,
+      "spending_to_income_ratio": 0.83,
       "platform_count": 1,
       "days_active_primary": 360,
-      "income_velocity_3m": 0.40
+      "income_velocity_3m": -0.20
     }
   }
 ]

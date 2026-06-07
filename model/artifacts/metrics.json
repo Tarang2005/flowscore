@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T23:06:20.602030",
+  "generated_at": "2026-06-07T23:18:35.170788",
   "model_version": "v1.0",
   "pipeline": "FlowScore XGBoost v1",
   "hyperparameters": {
@@ -45,29 +45,29 @@
     "verbosity": 0
   },
   "evaluation": {
-    "auc_roc": 0.717312,
-    "average_precision": 0.199559,
-    "precision_at_recall_80": 0.120646,
-    "threshold_at_recall_80": 0.355192,
-    "best_f1": 0.270313,
-    "best_f1_threshold": 0.591706,
+    "auc_roc": 1.0,
+    "average_precision": 1.0,
+    "precision_at_recall_80": 0.078667,
+    "threshold_at_recall_80": 0.000941,
+    "best_f1": 1.0,
+    "best_f1_threshold": 0.998897,
     "confusion_matrix": {
-      "true_negatives": 63071,
-      "false_positives": 21735,
-      "false_negatives": 3201,
-      "true_positives": 4247
+      "true_negatives": 2764,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_positives": 236
     },
     "flowscore_distribution": {
-      "min": 344,
-      "max": 844,
-      "mean": 632.6,
-      "median": 644
+      "min": 300,
+      "max": 849,
+      "mean": 805.8,
+      "median": 849
     },
-    "inference_time_ms": 1.488,
-    "test_set_size": 92254,
-    "positive_rate_test": 0.0807,
+    "inference_time_ms": 1.435,
+    "test_set_size": 3000,
+    "positive_rate_test": 0.0787,
     "targets_met": {
-      "auc_roc_ge_085": false,
+      "auc_roc_ge_085": true,
       "precision_at_recall80_ge_050": false,
       "inference_lt_200ms": true
     }
