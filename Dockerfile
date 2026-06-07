@@ -15,6 +15,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application
 COPY . .
 
+# Generate the ML models using the container's exact Python version
+ENV PYTHONPATH=/app
+RUN python scripts/generate_mock_data.py
+RUN python model/feature_engineering.py
+RUN python model/train_model.py
+
 # Expose port (Render uses $PORT, HuggingFace uses 7860, Koyeb uses 8000)
 # We will read PORT from environment or default to 8000
 ENV PORT=8000
