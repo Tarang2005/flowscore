@@ -18,6 +18,7 @@ COPY . .
 # Generate the ML models using the container's exact Python version
 ENV PYTHONPATH=/app
 RUN python scripts/generate_mock_data.py
+RUN python scripts/data_prep.py
 RUN python scripts/feature_engineering.py
 RUN python model/train_model.py
 
