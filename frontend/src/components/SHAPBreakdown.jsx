@@ -1,124 +1,87 @@
 /**
- * SHAPBreakdown — Horizontal bar chart showing feature contributions.
- *
- * Props:
- *   positiveFactors  {Array}  [{feature, contribution, value}, ...]
- *   negativeFactors  {Array}  [{feature, contribution, value}, ...]
+ * SHAPBreakdown — Feature contributions.
+ * Refactored for "AI + Trust" Design System
  */
-
-import {
-  BarChart, Bar, XAxis, YAxis, Tooltip,
-  ResponsiveContainer, Cell, LabelList,
-} from 'recharts';
 
 function formatFeatureName(name) {
   return name
     .replace(/_/g, ' ')
-    .replace(/6m/g, '(6M)')
-    .replace(/3m/g, '(3M)')
+    .replace(/6m/g, '')
+    .replace(/3m/g, '')
     .replace(/\bpct\b/g, '%')
     .replace(/\bavg\b/g, 'Avg')
     .replace(/\bstd dev\b/g, 'Std Dev')
     .split(' ')
     .map(w => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(' ');
+    .join(' ')
+    .trim();
 }
 
-function CustomTooltip({ active, payload }) {
-  if (!active || !payload?.[0]) return null;
-  const d = payload[0].payload;
-
-  return (
-    <div className="bg-surface-800 border border-surface-600 rounded-lg px-4 py-3 shadow-xl">
-      <p className="text-sm font-semibold text-surface-100 mb-1">
-        {formatFeatureName(d.feature)}
-      </p>
-      <p className="text-xs text-surface-400">
-        Value: <span className="text-surface-200 font-mono">{d.rawValue}</span>
-      </p>
-      <p className="text-xs mt-1">
-        Impact:{' '}
-        <span className={`font-semibold ${d.contribution > 0 ? 'text-red-400' : 'text-green-400'}`}>
-          {d.contribution > 0 ? '+' : ''}{d.contribution.toFixed(1)}
-        </span>
-      </p>
-    </div>
-  );
+function formatValue(value, featureName) {
+  if (typeof value === 'number') {
+    if (featureName.includes('days') || featureName.includes('Tenure')) return `${Math.round(value)} days`;
+    if (Number.isInteger(value)) return value;
+    return value.toFixed(2);
+  }
+  return value;
 }
 
 export default function SHAPBreakdown({ positiveFactors = [], negativeFactors = [] }) {
-  // Positive factors increase default risk (bad for borrower)
-  // Negative factors decrease default risk (good for borrower)
+  // Positive factors increase default risk (bad for borrower -> Negative signal)
+  // Negative factors decrease default risk (good for borrower -> Positive signal)
   const data = [
     ...negativeFactors.map(f => ({
       feature: f.feature,
-      contribution: f.contribution,
       rawValue: f.value,
-      type: 'positive', // Positive for the borrower (green)
+      signal: 'Positive', 
+      color: 'var(--color-signal-pos)',
     })),
     ...positiveFactors.map(f => ({
       feature: f.feature,
-      contribution: f.contribution,
       rawValue: f.value,
-      type: 'negative', // Negative for the borrower (red)
+      signal: 'Negative', 
+      color: 'var(--color-signal-neg)',
     })),
-  ].sort((a, b) => b.contribution - a.contribution);
+  ].slice(0, 5); // Only show top 5 to keep it clean
 
   const hasData = data.length > 0;
 
   return (
     <div className="glass-card p-6" id="shap-breakdown">
-      <div className="flex items-center justify-between mb-4">
-        <h3 className="text-sm font-semibold text-surface-300 uppercase tracking-wider">
-          🔍 Score Factors (SHAP)
+      <div className="mb-4">
+        <h3 className="text-xs font-semibold text-surface-400 uppercase tracking-widest">
+          Score Factors (SHAP Explainability Engine)
         </h3>
-        <div className="flex items-center gap-3 text-[10px]">
-          <span className="flex items-center gap-1">
-            <span className="w-2 h-2 rounded-full bg-green-400" /> Helps Score
-          </span>
-          <span className="flex items-center gap-1">
-            <span className="w-2 h-2 rounded-full bg-red-400" /> Hurts Score
-          </span>
-        </div>
       </div>
 
       {!hasData ? (
-        <div className="h-48 flex items-center justify-center text-surface-500 text-sm">
-          No SHAP data available — model not loaded
+        <div className="h-24 flex items-center justify-center text-surface-500 text-sm">
+          No SHAP data available
         </div>
       ) : (
-        <div className="space-y-2">
-          {data.map((item, i) => {
-            const isGood = item.contribution < 0;
-            const absVal = Math.abs(item.contribution);
-            const maxAbs = Math.max(...data.map(d => Math.abs(d.contribution)));
-            const barWidth = maxAbs > 0 ? (absVal / maxAbs) * 100 : 0;
-
-            return (
-              <div key={item.feature} className="group" style={{ animationDelay: `${i * 50}ms` }}>
-                <div className="flex items-center justify-between mb-1">
-                  <span className="text-xs text-surface-300 font-medium truncate max-w-[60%]">
-                    {formatFeatureName(item.feature)}
-                  </span>
-                  <span className={`text-xs font-mono font-semibold ${
-                    isGood ? 'text-green-400' : 'text-red-400'
-                  }`}>
-                    {item.contribution > 0 ? '+' : ''}{item.contribution.toFixed(1)}
-                  </span>
-                </div>
-                <div className="h-2 bg-surface-700 rounded-full overflow-hidden">
-                  <div
-                    className={`h-full rounded-full transition-all duration-700 ease-out ${
-                      isGood
-                        ? 'bg-gradient-to-r from-green-500 to-green-400'
-                        : 'bg-gradient-to-r from-red-500 to-red-400'
-                    }`}
-                    style={{ width: `${barWidth}%` }}
-                  />
-                </div>
+        <div className="space-y-0">
+          {data.map((item, i) => (
+            <div 
+              key={i} 
+              className="flex items-center justify-between py-3 border-b border-[rgba(255,255,255,0.03)] last:border-0"
+            >
+              <span className="text-[13px] text-surface-300">
+                {formatFeatureName(item.feature)} <span className="text-surface-500">({formatValue(item.rawValue, item.feature)})</span>
+              </span>
+              <div className="flex items-center gap-3">
+                <span className="text-[13px] text-surface-400">
+                  {item.signal}
+                </span>
+                <span 
+                  className="w-2 h-2 rounded-full" 
+                  style={{ 
+                    backgroundColor: item.color,
+                    boxShadow: `0 0 8px ${item.color}80` 
+                  }} 
+                />
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       )}
     </div>

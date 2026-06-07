@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
 
 /* ============================================================
    FlowScore Design System — CSS Custom Properties
@@ -26,7 +26,7 @@
   --color-score-danger: #ef4444;
 
   /* Neutral tones (dark theme base) */
-  --color-surface-900: #0b0f1a;
+  --color-surface-900: #090D16;
   --color-surface-800: #111827;
   --color-surface-700: #1e293b;
   --color-surface-600: #334155;
@@ -40,6 +40,14 @@
   --color-glass: rgba(255, 255, 255, 0.05);
   --color-glass-border: rgba(255, 255, 255, 0.08);
   --color-glass-hover: rgba(255, 255, 255, 0.1);
+
+  /* FlowScore Brand Accents */
+  --color-violet: #7C3AED;
+  --color-magenta: #EC4899;
+  
+  /* SHAP Signals */
+  --color-signal-pos: #4FA982;
+  --color-signal-neg: #E06B6B;
 }
 
 /* ============================================================
@@ -72,25 +80,17 @@ body {
    ============================================================ */
 
 .glass-card {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.04) 0%,
-    rgba(255, 255, 255, 0.01) 100%
-  );
-  border: 1px solid var(--color-glass-border);
+  background: rgba(17, 24, 39, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 16px;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-card:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.06) 0%,
-    rgba(255, 255, 255, 0.02) 100%
-  );
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(17, 24, 39, 0.7);
 }
 
 /* ============================================================
