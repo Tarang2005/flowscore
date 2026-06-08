@@ -30,30 +30,6 @@ export default function App() {
   const [personasLoading, setPersonasLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // ── Load personas on mount ──
-  useEffect(() => {
-    async function loadPersonas() {
-      try {
-        setPersonasLoading(true);
-        const data = await fetchPersonas();
-        setPersonas(data);
-
-        // Auto-select Priya
-        if (data.length > 0) {
-          setSelectedId(data[0].borrower_id);
-        }
-      } catch (err) {
-        console.error('Failed to load personas:', err);
-        setError('Failed to connect to FlowScore API. Is the backend running?');
-      } finally {
-        setPersonasLoading(false);
-      }
-    }
-
-    loadPersonas();
-  }, []);
-
-  // ── Fetch borrower when selection changes ──
   const loadBorrower = useCallback(async (id) => {
     if (!id) return;
 
@@ -73,14 +49,33 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (selectedId) {
-      loadBorrower(selectedId);
+    async function loadPersonas() {
+      try {
+        setPersonasLoading(true);
+        const data = await fetchPersonas();
+        setPersonas(data);
+
+        if (data.length > 0) {
+          const initialBorrowerId = data[0].borrower_id;
+          setSelectedId(initialBorrowerId);
+          loadBorrower(initialBorrowerId);
+        }
+      } catch (err) {
+        console.error('Failed to load personas:', err);
+        setError('Failed to connect to FlowScore API. Is the backend running?');
+      } finally {
+        setPersonasLoading(false);
+      }
     }
-  }, [selectedId, loadBorrower]);
+
+    loadPersonas();
+  }, [loadBorrower]);
 
   // ── Handler ──
   function handlePersonaSelect(id) {
+    if (!id || id === selectedId) return;
     setSelectedId(id);
+    loadBorrower(id);
   }
 
   return (
