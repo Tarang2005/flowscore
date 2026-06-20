@@ -47,7 +47,7 @@ graph TD
     
     C --> E[XGBoost ML Pipeline]
     E -->|Extract 23 Features| F[Feature Engineering]
-    F -->|Predict P(default)| G[Risk Model]
+    F -->|Predict P default| G[Risk Model]
     G -->|Scale 300-850| H[FlowScore Engine]
     
     H --> I[SHAP Explainer]
