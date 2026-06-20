@@ -38,23 +38,8 @@ By analyzing alternative data streams—such as platform earnings volatility, sp
 
 ## Architecture
 
-```mermaid
-graph TD
-    A[Gig Worker] -->|Auth/Data| B[Frontend Dashboard<br/>React + Tailwind]
-    B -->|API Request| C[FastAPI Backend]
-    
-    C -->|Webhook/Data| D[Data Ingestion<br/>Mock Razorpay]
-    
-    C --> E[XGBoost ML Pipeline]
-    E -->|Extract 23 Features| F[Feature Engineering]
-    F -->|Predict P default| G[Risk Model]
-    G -->|Scale 300-850| H[FlowScore Engine]
-    
-    H --> I[SHAP Explainer]
-    I -->|Top + / - Factors| J[Coaching Engine]
-    
-    J -->|Score & Advice| C
-```
+<img width="2389" height="5050" alt="Untitled diagram-2026-06-20-082754" src="https://github.com/user-attachments/assets/69be4708-b36c-439a-8061-79a1fd57b497" />
+
 
 ---
 
