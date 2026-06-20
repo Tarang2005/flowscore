@@ -181,4 +181,4 @@ The frontend will be available at `http://localhost:3000`.
 ---
 
 ## Credits
-Built by Tarang Patra for the Fintech Innovation Hackathon.
+Tarang Patra
